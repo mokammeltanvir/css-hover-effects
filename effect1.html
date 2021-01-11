@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS HOVER EFFECTS</title>
+    <style type="text/css">
+      .element {
+        float: left;
+        width: 400px;
+        height: 400px;
+        //background-color: #333;
+        color: #fff;
+        position: relative;
+      }
+
+      .front,
+      .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transition: all 0.5s ease;
+      }
+
+      .front {
+        transform: rotateY(0deg);
+      }
+
+      .back {
+        transform: rotateY(180deg);
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+      }
+
+      .element:hover .front {
+        transform: rotateY(180deg);
+      }
+
+      .element:hover .back {
+        transform: rotate(0deg);
+      }
+
+      .element .front img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="element">
+      <div class="front">
+        <img src="img/1.jpg" />
+      </div>
+      <div class="back">
+        <div class="back-content">
+          <h2>Hover effect1</h2>
+          <p>This is a wonderful project</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
